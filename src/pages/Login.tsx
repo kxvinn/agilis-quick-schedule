@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -21,26 +22,29 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto">
-        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-agilis-accent mb-8">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to home
-        </Link>
+        <div className="flex justify-between items-center mb-8">
+          <Link to="/" className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-agilis-accent">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to home
+          </Link>
+          <ThemeToggle />
+        </div>
         
-        <Card className="animate-fade-in">
+        <Card className="animate-fade-in dark:bg-gray-800 dark:border-gray-700">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl font-bold text-center">
+            <CardTitle className="text-2xl font-bold text-center dark:text-white">
               Welcome back
             </CardTitle>
-            <CardDescription className="text-center">
+            <CardDescription className="text-center dark:text-gray-300">
               Log in to your Agilis account
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="dark:text-gray-200">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -48,12 +52,13 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password" className="dark:text-gray-200">Password</Label>
                   <Link to="/forgot-password" className="text-xs text-agilis-accent hover:underline">
                     Forgot password?
                   </Link>
@@ -64,6 +69,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
@@ -73,7 +79,7 @@ const Login = () => {
             </form>
           </CardContent>
           <CardFooter>
-            <p className="text-center w-full text-sm text-gray-600">
+            <p className="text-center w-full text-sm text-gray-600 dark:text-gray-300">
               Don't have an account?{" "}
               <Link to="/signup" className="text-agilis-accent hover:underline">
                 Sign up
