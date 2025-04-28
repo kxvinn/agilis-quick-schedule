@@ -5,18 +5,18 @@ import { Check } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "Create your account",
-    description: "Sign up with your business details and set your availability"
+    title: "Crie sua conta",
+    description: "Cadastre-se com os dados do seu negócio e defina sua disponibilidade."
   },
   {
     number: "02",
-    title: "Share your booking link",
-    description: "Get a personalized booking link to share with your clients"
+    title: "Compartilhe seu link de reserva",
+    description: "Obtenha um link de reserva personalizado para compartilhar com seus clientes."
   },
   {
     number: "03",
-    title: "Get bookings",
-    description: "Clients book available slots and you receive notifications"
+    title: "Obtenha reservas",
+    description: "Os clientes reservam os horários disponíveis e você recebe notificações."
   }
 ];
 
@@ -57,10 +57,10 @@ const HowItWorks = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4">
-            How Agilis works
+            Como o Agilis funciona?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Three simple steps to transform your booking experience
+            São apenas três passos para transformar a sua agenda:
           </p>
         </div>
         

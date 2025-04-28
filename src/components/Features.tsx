@@ -23,34 +23,34 @@ const features = [
 
 const pricingPlans = [
   {
-    title: "Free Plan",
-    price: "R$ 0",
-    description: "Basic scheduling for small businesses just getting started",
+    title: "Plano Gratuito",
+    price: "",
+    description: "Programação básica para pequenas empresas que estão começando.",
     icon: <Package className="h-12 w-12 text-agilis-accent mb-4" />,
     features: [
-      "Up to 20 appointments per month",
-      "WhatsApp notifications",
-      "Basic client management",
-      "Manual calendar sync"
+      "Até 20 notificações por mês",
+      "Notificações de WhatsApp",
+      "Gestão básica de clientes",
+      "Sincronização manual de calendário"
     ],
-    buttonText: "Get Started Free",
+    buttonText: "Comece de graça",
     buttonLink: "/signup",
     highlighted: false
   },
   {
-    title: "Premium Plan",
-    price: "R$ 99/month",
-    description: "Advanced features for growing businesses",
+    title: "Plano Premium ",
+    price: "R$ 19,90/mês",
+    description: "Recursos avançados para empresas que querem escalar seu negócio sem preocupações.",
     icon: <BadgeDollarSign className="h-12 w-12 text-agilis-accent mb-4" />,
     features: [
-      "Unlimited appointments",
-      "Custom branding",
-      "Advanced analytics",
-      "Multiple staff accounts",
-      "Automatic calendar sync",
-      "Priority support"
+      "Notificações ilimitadas",
+      "Marca personalizada",
+      "Análise Avançada",
+      "Múltiplas contas de administração",
+      "Sincronização automática com o calendário",
+      "Suporte com Prioridade"
     ],
-    buttonText: "Start 14-day Trial",
+    buttonText: "Experimente 14 dias gratuitamente",
     buttonLink: "/signup",
     highlighted: true
   }

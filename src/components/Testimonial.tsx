@@ -23,12 +23,12 @@ const Testimonial = () => {
           </div>
           
           <blockquote className="text-xl md:text-2xl text-center text-gray-700 mb-6">
-            "Agilis transformed how I run my barbershop. My clients love the easy booking process, and I've saved hours each week on scheduling."
+            "A Agilis transformou a forma como administro minha barbearia. Meus clientes adoram o processo de agendamento fácil, e economizei horas semanais com agendamentos!"
           </blockquote>
           
           <div className="text-center">
-            <p className="font-semibold text-agilis-dark">Michael Torres</p>
-            <p className="text-gray-500">Owner, Elite Cuts Barbershop</p>
+            <p className="font-semibold text-agilis-dark">Francisco Toledo</p>
+            <p className="text-gray-500">Dono da Barbearia Freestop</p>
           </div>
         </div>
       </div>

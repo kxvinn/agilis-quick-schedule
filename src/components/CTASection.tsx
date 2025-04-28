@@ -10,18 +10,18 @@ const CTASection = () => {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-6">
-            Ready to simplify your scheduling?
+            Pronto para simplificar seu agendamento?
           </h2>
           <p className="text-xl text-gray-700 mb-8">
-            Join thousands of businesses using Agilis to save time and delight their customers.
+            Junte-se a milhares de empresas que usam o Agilis para economizar tempo e encantar seus clientes.
           </p>
           <Link to="/signup">
             <Button size="lg" className="bg-agilis-accent text-white hover:bg-agilis-accent/90 text-lg px-8 btn-hover">
-              Start for free
+              Comece gratuitamente
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <p className="mt-4 text-gray-600">No credit card required</p>
+          <p className="mt-4 text-gray-600">Não é necessário cartão de crédito.</p>
         </div>
       </div>
     </section>

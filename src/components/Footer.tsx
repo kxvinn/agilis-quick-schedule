@@ -14,7 +14,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-600 mb-4">
-              Simple scheduling for service businesses
+              Agendamento simples para empresas de serviços
             </p>
           </div>
           
@@ -48,7 +48,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-6 border-t border-gray-100 text-center">
           <p className="text-gray-600">
-            &copy; {new Date().getFullYear()} Agilis. All rights reserved.
+            &copy; {new Date().getFullYear()} Agilis. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -53,22 +53,22 @@ const Navbar = () => {
               onClick={() => scrollToSection('features')} 
               className="text-agilis-dark dark:text-gray-200 hover:text-agilis-accent transition-colors"
             >
-              Features
+              Funcionalidades
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')} 
               className="text-agilis-dark dark:text-gray-200 hover:text-agilis-accent transition-colors"
             >
-              How It Works
+              Como Funciona
             </button>
             <Link to="/login">
               <Button variant="ghost" className="text-agilis-dark dark:text-gray-200 hover:text-agilis-accent">
-                Log in
+                Login
               </Button>
             </Link>
             <Link to="/signup">
               <Button className="bg-agilis-accent text-white hover:bg-agilis-accent/90 btn-hover">
-                Sign up free
+                Cadastre-se de graça
               </Button>
             </Link>
             <ThemeToggle />
