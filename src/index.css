@@ -73,6 +73,15 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 38 83% 61%;
+    
+    --sidebar-background: 220 14% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -82,13 +91,17 @@
   }
 
   body {
-    @apply bg-agilis-light text-agilis-dark font-sans antialiased;
+    @apply bg-agilis-light dark:bg-background text-agilis-dark dark:text-foreground font-sans antialiased;
   }
 }
 
 @layer utilities {
   .hero-gradient {
     background: radial-gradient(circle at top right, rgba(233, 180, 76, 0.2), transparent 60%);
+  }
+  
+  .dark .hero-gradient {
+    background: radial-gradient(circle at top right, rgba(233, 180, 76, 0.1), transparent 60%);
   }
   
   .section-padding {

@@ -58,13 +58,13 @@ const pricingPlans = [
 
 const Features = () => {
   return (
-    <section id="features" className="section-padding bg-white">
+    <section id="features" className="section-padding bg-white dark:bg-gray-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
             Everything you need to manage appointments
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Agilis gives you all the tools to streamline your booking process
           </p>
         </div>
@@ -73,12 +73,12 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-agilis-light p-6 rounded-lg border border-gray-100 shadow-sm card-hover animate-fade-in"
+              className="bg-agilis-light dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm card-hover animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-agilis-dark">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-agilis-dark dark:text-white">{feature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -86,10 +86,10 @@ const Features = () => {
         {/* Pricing Plans */}
         <div className="mt-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
               Choose the plan that's right for you
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Start for free and upgrade as your business grows
             </p>
           </div>
@@ -100,8 +100,8 @@ const Features = () => {
                 key={index} 
                 className={`p-8 rounded-xl animate-fade-in ${
                   plan.highlighted 
-                    ? 'bg-agilis-accent/10 border-2 border-agilis-accent relative shadow-lg' 
-                    : 'bg-agilis-light border border-gray-200'
+                    ? 'bg-agilis-accent/10 dark:bg-agilis-accent/20 border-2 border-agilis-accent relative shadow-lg' 
+                    : 'bg-agilis-light dark:bg-gray-800 border border-gray-200 dark:border-gray-700'
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -112,18 +112,18 @@ const Features = () => {
                 )}
                 <div className="text-center mb-6">
                   {plan.icon}
-                  <h3 className="text-2xl font-bold text-agilis-dark">{plan.title}</h3>
+                  <h3 className="text-2xl font-bold text-agilis-dark dark:text-white">{plan.title}</h3>
                   <div className="mt-2">
-                    <span className="text-3xl font-bold text-agilis-dark">{plan.price}</span>
+                    <span className="text-3xl font-bold text-agilis-dark dark:text-white">{plan.price}</span>
                   </div>
-                  <p className="text-gray-600 mt-2">{plan.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{plan.description}</p>
                 </div>
                 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <Star className="h-5 w-5 text-agilis-accent mr-2 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -132,7 +132,7 @@ const Features = () => {
                   className={`w-full ${
                     plan.highlighted 
                       ? 'bg-agilis-accent text-white hover:bg-agilis-accent/90' 
-                      : 'bg-white border border-agilis-accent text-agilis-dark hover:bg-agilis-light/80'
+                      : 'bg-white dark:bg-gray-700 border border-agilis-accent text-agilis-dark dark:text-white hover:bg-agilis-light/80 dark:hover:bg-gray-600'
                   }`}
                 >
                   {plan.buttonText}
