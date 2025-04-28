@@ -21,6 +21,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -40,12 +48,18 @@ const Navbar = () => {
             <Link to="/" className="text-agilis-dark hover:text-agilis-accent transition-colors">
               Home
             </Link>
-            <Link to="#features" className="text-agilis-dark hover:text-agilis-accent transition-colors">
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="text-agilis-dark hover:text-agilis-accent transition-colors"
+            >
               Features
-            </Link>
-            <Link to="#how-it-works" className="text-agilis-dark hover:text-agilis-accent transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-it-works')} 
+              className="text-agilis-dark hover:text-agilis-accent transition-colors"
+            >
               How It Works
-            </Link>
+            </button>
             <Link to="/login">
               <Button variant="ghost" className="text-agilis-dark hover:text-agilis-accent">
                 Log in
@@ -80,20 +94,18 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <Link 
-                to="#features" 
-                className="text-agilis-dark hover:text-agilis-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => scrollToSection('features')} 
+                className="text-agilis-dark hover:text-agilis-accent transition-colors py-2 text-left"
               >
                 Features
-              </Link>
-              <Link 
-                to="#how-it-works" 
-                className="text-agilis-dark hover:text-agilis-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => scrollToSection('how-it-works')} 
+                className="text-agilis-dark hover:text-agilis-accent transition-colors py-2 text-left"
               >
                 How It Works
-              </Link>
+              </button>
               <Link 
                 to="/login" 
                 className="text-agilis-dark hover:text-agilis-accent transition-colors py-2"
