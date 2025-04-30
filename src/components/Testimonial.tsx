@@ -3,9 +3,9 @@ import React from 'react';
 
 const Testimonial = () => {
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto bg-agilis-light p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm animate-fade-in">
+    <section className="section-padding bg-white dark:bg-slate-900">
+      <div className="container mx-auto ">
+        <div className="max-w-4xl mx-auto bg-agilis-light p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm animate-fade-in dark:bg-slate-500">
           <div className="text-center mb-6">
             <div className="flex justify-center">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -22,13 +22,13 @@ const Testimonial = () => {
             </div>
           </div>
           
-          <blockquote className="text-xl md:text-2xl text-center text-gray-700 mb-6">
+          <blockquote className="text-xl md:text-2xl text-center text-gray-700 mb-6 dark:text-white">
             "A Agilis transformou a forma como administro minha barbearia. Meus clientes adoram o processo de agendamento fácil, e economizei horas semanais com agendamentos!"
           </blockquote>
           
           <div className="text-center">
-            <p className="font-semibold text-agilis-dark">Francisco Toledo</p>
-            <p className="text-gray-500">Dono da Barbearia Freestop</p>
+            <p className="font-semibold text-agilis-dark dark:text-gray-200">Francisco Toledo</p>
+            <p className="text-gray-500 dark:text-gray-300">Dono da Barbearia Freestop</p>
           </div>
         </div>
       </div>

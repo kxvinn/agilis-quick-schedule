@@ -6,18 +6,18 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     icon: <Calendar className="h-10 w-10 text-agilis-accent" />,
-    title: "Simple Scheduling",
-    description: "Allow clients to book appointments with your business in just a few clicks, no back-and-forth emails needed."
+    title: "Agendamento Simples",
+    description: "Permita clientes agendar suas próprias reservas com o seu negócio em poucos cliques e sem necessidade de e-mail."
   },
   {
     icon: <Clock className="h-10 w-10 text-agilis-accent" />,
-    title: "Time Management",
-    description: "Set your availability and let clients book only when you're free. Automatic timezone detection included."
+    title: "Gestão de Tempo",
+    description: "Configure sua disponibilidade e deixe clientes reservarem somente quando você estiver disponível. Rápido. Eficaz."
   },
   {
     icon: <Users className="h-10 w-10 text-agilis-accent" />,
-    title: "Client Management",
-    description: "Keep track of your clients and their appointment history all in one place."
+    title: "Gestão de Clientes",
+    description: "Fique conectado com seus clientes e seus históricos de reservas tudo em um só lugar."
   }
 ];
 
@@ -62,10 +62,10 @@ const Features = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
-            Everything you need to manage appointments
+            Tudo o que você precisa para gerenciar agendamentos
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Agilis gives you all the tools to streamline your booking process
+            Agilis te dá todas as ferramentas necessárias para simplificar seu processo de reserva
           </p>
         </div>
         
@@ -87,10 +87,10 @@ const Features = () => {
         <div className="mt-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
-              Choose the plan that's right for you
+              Escolha o plano que te atenda melhor
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Start for free and upgrade as your business grows
+              Comece gratuitamente e invista quando o seu negócio começar a escalar
             </p>
           </div>
 
@@ -107,7 +107,7 @@ const Features = () => {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-agilis-accent text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Recommended
+                    Recomendado
                   </div>
                 )}
                 <div className="text-center mb-6">
@@ -131,7 +131,7 @@ const Features = () => {
                 <Button 
                   className={`w-full ${
                     plan.highlighted 
-                      ? 'bg-agilis-accent text-white hover:bg-agilis-accent/90' 
+                      ? 'bg-agilis-accent text-white hover:bg-agilis-accent/90 dark:text-black' 
                       : 'bg-white dark:bg-gray-700 border border-agilis-accent text-agilis-dark dark:text-white hover:bg-agilis-light/80 dark:hover:bg-gray-600'
                   }`}
                 >

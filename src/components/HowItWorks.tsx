@@ -53,13 +53,13 @@ const HowItWorks = () => {
   }, []);
   
   return (
-    <section id="how-it-works" className="section-padding bg-gray-50">
+    <section id="how-it-works" className="section-padding bg-gray-50 dark:bg-slate-950">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4 dark:text-white">
             Como o Agilis funciona?
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-200">
             São apenas três passos para transformar a sua agenda:
           </p>
         </div>
@@ -76,8 +76,8 @@ const HowItWorks = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-2 text-agilis-dark">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-2xl font-semibold mb-2 text-agilis-dark dark:text-white">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-200">{step.description}</p>
               </div>
             </div>
           ))}

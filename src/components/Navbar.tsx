@@ -67,7 +67,7 @@ const Navbar = () => {
               </Button>
             </Link>
             <Link to="/signup">
-              <Button className="bg-agilis-accent text-white hover:bg-agilis-accent/90 btn-hover">
+              <Button className="bg-agilis-accent text-white hover:bg-agilis-accent/90 btn-hover dark:text-black">
                 Cadastre-se de graça
               </Button>
             </Link>
