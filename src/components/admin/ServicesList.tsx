@@ -124,16 +124,16 @@ const ServicesList = () => {
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Service</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Duration</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Price</th>
-                <th className="text-right py-3 px-4 text-sm font-medium text-gray-500">Actions</th>
+                <th className="text-right py-3 px-8 text-sm font-medium text-gray-500">Actions</th>
               </tr>
             </thead>
             <tbody>
               {services.map((service) => (
-                <tr key={service.id} className="border-b border-gray-100 hover:bg-gray-50">
+                <tr key={service.id} className="border-b border-gray-100 hover:bg-zinc-900 duration-200 transition-colors">
                   <td className="py-3 px-4 text-sm font-medium">{service.name}</td>
                   <td className="py-3 px-4 text-sm">{service.duration}</td>
                   <td className="py-3 px-4 text-sm">{service.price}</td>
-                  <td className="py-3 px-4 text-sm text-right">
+                  <td className="py-3 px-5 text-sm text-right">
                     <Button 
                       variant="ghost" 
                       size="sm"

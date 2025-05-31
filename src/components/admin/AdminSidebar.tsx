@@ -30,7 +30,7 @@ const AdminSidebar = () => {
   const location = useLocation();
   
   return (
-    <aside className="bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 h-screen w-64 fixed left-0 top-0 z-30">
+    <aside className="bg-white dark:bg-zinc-950 border-r border-gray-200 dark:border-gray-700 h-screen w-64 fixed left-0 top-0 z-30">
       <div className="h-full flex flex-col">
         <div className="p-4 border-b border-gray-200 dark:border-gray-700">
           <Link to="/admin/dashboard" className="flex items-center">

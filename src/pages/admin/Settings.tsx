@@ -56,7 +56,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div className="bg-gray-50 dark:bg-zinc-950 min-h-screen">
       <AdminSidebar />
       
       <div className="ml-64 p-8">

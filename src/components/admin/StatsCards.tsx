@@ -6,8 +6,8 @@ import { Calendar, Users, Clock } from "lucide-react";
 const StatsCards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-      <Card className="animate-fade-in" style={{ animationDelay: '0ms' }}>
-        <CardContent className="p-6">
+      <Card className="animate-fade-in rounded" style={{ animationDelay: '0ms' }}>
+        <CardContent className="p-6 dark:bg-gray-950 rounded">
           <div className="flex items-center">
             <div className="p-2 bg-agilis-accent/10 rounded-md mr-4">
               <Calendar className="h-6 w-6 text-agilis-accent" />
@@ -20,8 +20,8 @@ const StatsCards = () => {
         </CardContent>
       </Card>
       
-      <Card className="animate-fade-in" style={{ animationDelay: '100ms' }}>
-        <CardContent className="p-6">
+      <Card className="animate-fade-in rounded" style={{ animationDelay: '100ms' }}>
+        <CardContent className="p-6 dark:bg-gray-950 rounded">
           <div className="flex items-center">
             <div className="p-2 bg-agilis-accent/10 rounded-md mr-4">
               <Users className="h-6 w-6 text-agilis-accent" />
@@ -34,8 +34,8 @@ const StatsCards = () => {
         </CardContent>
       </Card>
       
-      <Card className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-        <CardContent className="p-6">
+      <Card className="animate-fade-in rounded" style={{ animationDelay: '200ms' }}>
+        <CardContent className="p-6 dark:bg-gray-950 rounded">
           <div className="flex items-center">
             <div className="p-2 bg-agilis-accent/10 rounded-md mr-4">
               <Clock className="h-6 w-6 text-agilis-accent" />

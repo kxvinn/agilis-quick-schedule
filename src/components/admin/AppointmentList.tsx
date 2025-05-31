@@ -64,21 +64,21 @@ const AppointmentList = () => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Customer</th>
+                <th className="text-left py-3 px-4 text-sm font-medium text-amber-500">Customer</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Service</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Date</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Time</th>
-                <th className="text-right py-3 px-4 text-sm font-medium text-gray-500">Actions</th>
+                <th className="text-right py-3 px-12 text-sm font-medium text-gray-500">Actions</th>
               </tr>
             </thead>
             <tbody>
               {appointments.map((appointment) => (
-                <tr key={appointment.id} className="border-b border-gray-100 hover:bg-gray-50">
+                <tr key={appointment.id} className="border-b border-gray-100 duration-200 hover:bg-zinc-900 transition-all">
                   <td className="py-3 px-4 text-sm">{appointment.customerName}</td>
                   <td className="py-3 px-4 text-sm">{appointment.service}</td>
                   <td className="py-3 px-4 text-sm">{appointment.date}</td>
                   <td className="py-3 px-4 text-sm">{appointment.time}</td>
-                  <td className="py-3 px-4 text-sm text-right">
+                  <td className="py-3 px-2 text-sm text-right">
                     <Button 
                       variant="outline" 
                       size="sm"

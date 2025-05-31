@@ -70,12 +70,12 @@ const CustomersList = () => {
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Phone</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Appointments</th>
                 <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Last Visit</th>
-                <th className="text-right py-3 px-4 text-sm font-medium text-gray-500">Actions</th>
+                <th className="text-right py-3 px-8 text-sm font-medium text-gray-500">Actions</th>
               </tr>
             </thead>
             <tbody>
               {customers.map((customer) => (
-                <tr key={customer.id} className="border-b border-gray-100 hover:bg-gray-50">
+                <tr key={customer.id} className="border-b border-gray-100 hover:bg-zinc-900 transition-colors duration-200 ">
                   <td className="py-3 px-4 text-sm font-medium">{customer.name}</td>
                   <td className="py-3 px-4 text-sm">{customer.phone}</td>
                   <td className="py-3 px-4 text-sm">{customer.appointments}</td>
