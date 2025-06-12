@@ -10,17 +10,17 @@ const navItems = [
     icon: <Calendar className="h-5 w-5" /> 
   },
   { 
-    label: "Services", 
+    label: "Serviços", 
     path: "/admin/services", 
     icon: <Clock className="h-5 w-5" /> 
   },
   { 
-    label: "Customers", 
+    label: "Clientes", 
     path: "/admin/customers", 
     icon: <Users className="h-5 w-5" /> 
   },
   { 
-    label: "Settings", 
+    label: "Configurações", 
     path: "/admin/settings", 
     icon: <Settings className="h-5 w-5" /> 
   }
@@ -66,7 +66,7 @@ const AdminSidebar = () => {
             className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
           >
             <LogOut className="h-5 w-5 mr-3" />
-            <span>Log out</span>
+            <span>Sair</span>
           </Link>
         </div>
       </div>

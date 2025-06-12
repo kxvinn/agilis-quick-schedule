@@ -7,35 +7,35 @@ import { Plus } from "lucide-react";
 
 interface Service {
   id: number;
-  name: string;
-  duration: string;
-  price: string;
+  nome: string;
+  duracao: string;
+  preco: string;
 }
 
 const initialServices: Service[] = [
   {
     id: 1,
-    name: "Haircut",
-    duration: "30 min",
-    price: "$25"
+    nome: "Haircut",
+    duracao: "30 min",
+    preco: "$25"
   },
   {
     id: 2,
-    name: "Hair Coloring",
-    duration: "90 min",
-    price: "$120"
+    nome: "Hair Coloring",
+    duracao: "90 min",
+    preco: "$120"
   },
   {
     id: 3,
-    name: "Beard Trim",
-    duration: "15 min",
-    price: "$15"
+    nome: "Beard Trim",
+    duracao: "15 min",
+    preco: "$15"
   },
   {
     id: 4,
-    name: "Full Treatment",
-    duration: "120 min",
-    price: "$150"
+    nome: "Full Treatment",
+    duracao: "120 min",
+    preco: "$150"
   }
 ];
 
@@ -43,23 +43,23 @@ const ServicesList = () => {
   const [services, setServices] = useState<Service[]>(initialServices);
   const [showAddForm, setShowAddForm] = useState(false);
   const [newService, setNewService] = useState({
-    name: "",
-    duration: "",
-    price: ""
+    nome: "",
+    duracao: "",
+    preco: ""
   });
   
   const handleAddService = () => {
-    if (newService.name && newService.duration && newService.price) {
+    if (newService.nome && newService.duracao && newService.preco) {
       setServices([
         ...services,
         {
           id: services.length + 1,
-          name: newService.name,
-          duration: newService.duration,
-          price: newService.price
+          nome: newService.nome,
+          duracao: newService.duracao,
+          preco: newService.preco
         }
       ]);
-      setNewService({ name: "", duration: "", price: "" });
+      setNewService({ nome: "", duracao: "", preco: "" });
       setShowAddForm(false);
     }
   };
@@ -69,7 +69,7 @@ const ServicesList = () => {
   };
 
   return (
-    <Card className="animate-fade-in">
+    <Card className="animate-fade-in dark:bg-zinc-950">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>Services</CardTitle>
         <Button 
@@ -88,18 +88,18 @@ const ServicesList = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <Input
                 placeholder="Service name"
-                value={newService.name}
-                onChange={(e) => setNewService({...newService, name: e.target.value})}
+                value={newService.nome}
+                onChange={(e) => setNewService({...newService, nome: e.target.value})}
               />
               <Input
-                placeholder="Duration (e.g. 30 min)"
-                value={newService.duration}
-                onChange={(e) => setNewService({...newService, duration: e.target.value})}
+                placeholder="duracao (e.g. 30 min)"
+                value={newService.duracao}
+                onChange={(e) => setNewService({...newService, duracao: e.target.value})}
               />
               <Input
-                placeholder="Price (e.g. $25)"
-                value={newService.price}
-                onChange={(e) => setNewService({...newService, price: e.target.value})}
+                placeholder="preco (e.g. $25)"
+                value={newService.preco}
+                onChange={(e) => setNewService({...newService, preco: e.target.value})}
               />
             </div>
             <div className="flex justify-end space-x-2">
@@ -121,18 +121,18 @@ const ServicesList = () => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Service</th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Duration</th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Price</th>
-                <th className="text-right py-3 px-8 text-sm font-medium text-gray-500">Actions</th>
+                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Serviço</th>
+                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Duração</th>
+                <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">Preço</th>
+                <th className="text-right py-3 px-8 text-sm font-medium text-gray-500">Ações</th>
               </tr>
             </thead>
             <tbody>
               {services.map((service) => (
-                <tr key={service.id} className="border-b border-gray-100 hover:bg-zinc-900 duration-200 transition-colors">
-                  <td className="py-3 px-4 text-sm font-medium">{service.name}</td>
-                  <td className="py-3 px-4 text-sm">{service.duration}</td>
-                  <td className="py-3 px-4 text-sm">{service.price}</td>
+                <tr key={service.id} className="border-b border-gray-100 hover:bg-gray-200 dark:hover:bg-zinc-900 duracao-200 transition-colors">
+                  <td className="py-3 px-4 text-sm font-medium">{service.nome}</td>
+                  <td className="py-3 px-4 text-sm">{service.duracao}</td>
+                  <td className="py-3 px-4 text-sm">{service.preco}</td>
                   <td className="py-3 px-5 text-sm text-right">
                     <Button 
                       variant="ghost" 
@@ -140,7 +140,7 @@ const ServicesList = () => {
                       className="text-red-500 hover:text-red-700 hover:bg-red-50"
                       onClick={() => handleDeleteService(service.id)}
                     >
-                      Delete
+                      Deletar
                     </Button>
                   </td>
                 </tr>

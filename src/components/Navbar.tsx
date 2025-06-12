@@ -89,7 +89,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 animate-fade-in">
+        <div className="md:hidden bg-white dark:bg-zinc-900 border-t dark:border-gray-800 animate-fade-in">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               <Link 

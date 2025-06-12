@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="section-padding bg-agilis-accent/10 dark:bg-slate-950">
+    <section className="section-padding bg-agilis-accent/10 dark:bg-zinc-950">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-6 dark:text-white">

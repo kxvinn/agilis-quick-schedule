@@ -10,8 +10,8 @@ const Services = () => {
       
       <div className="ml-64 p-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-agilis-dark dark:text-white">Services</h1>
-          <p className="text-gray-600">Manage your services and pricing.</p>
+          <h1 className="text-2xl font-bold text-agilis-dark dark:text-white">Serviços</h1>
+          <p className="text-gray-600">Gerencie seus serviços e preficicação.</p>
         </div>
         
         <ServicesList />

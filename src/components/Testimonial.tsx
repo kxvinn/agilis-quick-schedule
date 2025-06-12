@@ -3,9 +3,9 @@ import React from 'react';
 
 const Testimonial = () => {
   return (
-    <section className="section-padding bg-white dark:bg-slate-900">
+    <section className="section-padding bg-white dark:bg-zinc-900">
       <div className="container mx-auto ">
-        <div className="max-w-4xl mx-auto bg-agilis-light p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm animate-fade-in dark:bg-slate-500">
+        <div className="max-w-4xl mx-auto bg-agilis-light p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm animate-fade-in dark:bg-zinc-900">
           <div className="text-center mb-6">
             <div className="flex justify-center">
               {[1, 2, 3, 4, 5].map((star) => (

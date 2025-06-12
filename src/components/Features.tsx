@@ -58,7 +58,7 @@ const pricingPlans = [
 
 const Features = () => {
   return (
-    <section id="features" className="section-padding bg-white dark:bg-gray-900">
+    <section id="features" className="section-padding bg-white dark:bg-zinc-950">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
@@ -73,7 +73,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-agilis-light dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm card-hover animate-fade-in"
+              className="bg-agilis-light dark:bg-zin-900 p-6 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm card-hover animate-fade-in dark:bg-zinc-950"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="mb-4">{feature.icon}</div>
@@ -86,7 +86,7 @@ const Features = () => {
         {/* Pricing Plans */}
         <div className="mt-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark dark:text-white mb-4 ">
               Escolha o plano que te atenda melhor
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -94,14 +94,14 @@ const Features = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto ">
             {pricingPlans.map((plan, index) => (
               <div 
                 key={index} 
                 className={`p-8 rounded-xl animate-fade-in ${
                   plan.highlighted 
                     ? 'bg-agilis-accent/10 dark:bg-agilis-accent/20 border-2 border-agilis-accent relative shadow-lg' 
-                    : 'bg-agilis-light dark:bg-gray-800 border border-gray-200 dark:border-gray-700'
+                    : 'bg-agilis-light dark:bg-zinc-900 border border-gray-200 dark:border-gray-700'
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -110,7 +110,7 @@ const Features = () => {
                     Recomendado
                   </div>
                 )}
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 ">
                   {plan.icon}
                   <h3 className="text-2xl font-bold text-agilis-dark dark:text-white">{plan.title}</h3>
                   <div className="mt-2">
@@ -119,7 +119,7 @@ const Features = () => {
                   <p className="text-gray-600 dark:text-gray-300 mt-2">{plan.description}</p>
                 </div>
                 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 ">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <Star className="h-5 w-5 text-agilis-accent mr-2 flex-shrink-0" />
@@ -132,7 +132,7 @@ const Features = () => {
                   className={`w-full ${
                     plan.highlighted 
                       ? 'bg-agilis-accent text-white hover:bg-agilis-accent/90 dark:text-black' 
-                      : 'bg-white dark:bg-gray-700 border border-agilis-accent text-agilis-dark dark:text-white hover:bg-agilis-light/80 dark:hover:bg-gray-600'
+                      : 'bg-white dark:bg-zinc-950 border border-agilis-accent text-agilis-dark dark:text-white hover:bg-agilis-light/80 dark:hover:bg-gray-600'
                   }`}
                 >
                   {plan.buttonText}

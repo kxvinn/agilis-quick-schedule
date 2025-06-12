@@ -10,49 +10,49 @@ import { toast } from "@/components/ui/sonner";
 import { useTheme } from "@/components/theme/ThemeProvider";
 import { Moon, Sun, Monitor } from "lucide-react";
 
-const timeSlots = [
-  { id: 1, label: "Morning (8am - 12pm)" },
-  { id: 2, label: "Afternoon (12pm - 5pm)" },
-  { id: 3, label: "Evening (5pm - 9pm)" },
+const horarios = [
+  { id: 1, label: "Manhã (8:00 - 12:00)" },
+  { id: 2, label: "Tarde (12:00 - 17:00)" },
+  { id: 3, label: "Noite (17:00 - 21:00)" },
 ];
 
-const daysOfWeek = [
-  { id: 'mon', label: "Monday" },
-  { id: 'tue', label: "Tuesday" },
-  { id: 'wed', label: "Wednesday" },
-  { id: 'thu', label: "Thursday" },
-  { id: 'fri', label: "Friday" },
-  { id: 'sat', label: "Saturday" },
-  { id: 'sun', label: "Sunday" },
+const diasDaSemana = [
+  { id: 'seg', label: "Segunda" },
+  { id: 'ter', label: "Terça" },
+  { id: 'qua', label: "Quarta" },
+  { id: 'qui', label: "Quinta" },
+  { id: 'sex', label: "Sexta" },
+  { id: 'sab', label: "Sábado" },
+  { id: 'dom', label: "Domingo" },
 ];
 
 const Settings = () => {
   const { theme, setTheme } = useTheme();
-  const [businessName, setBusinessName] = useState('Elite Cuts Barbershop');
+  const [nomeEmpresarial, setnomeEmpresarial] = useState('Elite Cuts Barbershop');
   const [whatsapp, setWhatsapp] = useState('+1 234 567 8900');
   const [email, setEmail] = useState('info@elitecuts.com');
-  const [selectedDays, setSelectedDays] = useState<string[]>(['mon', 'tue', 'wed', 'thu', 'fri']);
-  const [selectedTimeSlots, setSelectedTimeSlots] = useState<number[]>([1, 2]);
-  const [bookingLink, setBookingLink] = useState('agilis.com/elite-cuts');
+  const [diasSelecionados, setdiasSelecionados] = useState<string[]>(['mon', 'tue', 'wed', 'thu', 'fri']);
+  const [horariosSelecionados, sethorariosSelecionados] = useState<number[]>([1, 2]);
+  const [linkAgendamento, setlinkAgendamento] = useState('agilis.com/elite-cuts');
 
   const handleDayToggle = (dayId: string) => {
-    if (selectedDays.includes(dayId)) {
-      setSelectedDays(selectedDays.filter(id => id !== dayId));
+    if (diasSelecionados.includes(dayId)) {
+      setdiasSelecionados(diasSelecionados.filter(id => id !== dayId));
     } else {
-      setSelectedDays([...selectedDays, dayId]);
+      setdiasSelecionados([...diasSelecionados, dayId]);
     }
   };
 
-  const handleTimeSlotToggle = (slotId: number) => {
-    if (selectedTimeSlots.includes(slotId)) {
-      setSelectedTimeSlots(selectedTimeSlots.filter(id => id !== slotId));
+  const handleHorariosToggle = (slotId: number) => {
+    if (horariosSelecionados.includes(slotId)) {
+      sethorariosSelecionados(horariosSelecionados.filter(id => id !== slotId));
     } else {
-      setSelectedTimeSlots([...selectedTimeSlots, slotId]);
+      sethorariosSelecionados([...horariosSelecionados, slotId]);
     }
   };
 
   const handleSaveSettings = () => {
-    toast.success("Settings saved successfully!");
+    toast.success("Configurações salvas!");
   };
 
   return (
@@ -61,37 +61,39 @@ const Settings = () => {
       
       <div className="ml-64 p-8">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-agilis-dark dark:text-white">Settings</h1>
-          <p className="text-gray-600 dark:text-gray-300">Configure your account and appointment settings.</p>
+          <h1 className="text-2xl font-bold text-agilis-dark dark:text-white">Configurações</h1>
+          <p className="text-gray-600 dark:text-gray-300">Configuração da conta</p>
         </div>
         
-        <Tabs defaultValue="general" className="animate-fade-in">
-          <TabsList className="mb-6">
-            <TabsTrigger value="general">General</TabsTrigger>
-            <TabsTrigger value="appearance">Appearance</TabsTrigger>
-            <TabsTrigger value="availability">Availability</TabsTrigger>
-            <TabsTrigger value="booking">Booking Link</TabsTrigger>
+        <Tabs defaultValue="general" className="animate-fade-in dark:bg-zinc-950">
+          <TabsList className="mb-6 dark:bg-zinc-900">
+            <TabsTrigger value="general">Geral</TabsTrigger>
+            <TabsTrigger value="appearance">Aparência</TabsTrigger>
+            <TabsTrigger value="availability">Disponibilidade</TabsTrigger>
+            <TabsTrigger value="booking">Link para Agendamento</TabsTrigger>
           </TabsList>
           
           <TabsContent value="general">
-            <Card>
+            <Card className="dark:bg-zinc-950">
               <CardHeader>
-                <CardTitle>Business Information</CardTitle>
+                <CardTitle>Informações do Negócio</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="businessName">Business Name</Label>
+                    <Label htmlFor="nomeEmpresarial">Nome Empresarial</Label>
                     <Input
-                      id="businessName"
-                      value={businessName}
-                      onChange={(e) => setBusinessName(e.target.value)}
+                      id="nomeEmpresarial"
+                      className="dark:bg-zinc-900"
+                      value={nomeEmpresarial}
+                      onChange={(e) => setnomeEmpresarial(e.target.value)}
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="whatsapp">WhatsApp Number</Label>
+                    <Label htmlFor="whatsapp">Número do WhatsApp</Label>
                     <Input
+                    className="dark:bg-zinc-900"
                       id="whatsapp"
                       value={whatsapp}
                       onChange={(e) => setWhatsapp(e.target.value)}
@@ -99,8 +101,9 @@ const Settings = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
+                    className="dark:bg-zinc-900"
                       id="email"
                       type="email"
                       value={email}
@@ -113,7 +116,7 @@ const Settings = () => {
                       onClick={handleSaveSettings}
                       className="bg-agilis-accent hover:bg-agilis-accent/90"
                     >
-                      Save Changes
+                      Salvar Alterações
                     </Button>
                   </div>
                 </div>
@@ -122,14 +125,14 @@ const Settings = () => {
           </TabsContent>
           
           <TabsContent value="appearance">
-            <Card>
+            <Card className="dark:bg-zinc-950">
               <CardHeader>
-                <CardTitle>Theme Settings</CardTitle>
+                <CardTitle>Configurações do tema</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <Label>Theme Mode</Label>
+                    <Label>Modo do tema</Label>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <button
                         type="button"
@@ -142,7 +145,7 @@ const Settings = () => {
                       >
                         <div className="text-center">
                           <Sun className="h-8 w-8 mx-auto mb-2 text-orange-500" />
-                          <span className={theme === "light" ? "font-medium" : ""}>Light Mode</span>
+                          <span className={theme === "light" ? "font-medium" : ""}>Modo claro</span>
                         </div>
                       </button>
                       
@@ -157,7 +160,7 @@ const Settings = () => {
                       >
                         <div className="text-center">
                           <Moon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                          <span className={theme === "dark" ? "font-medium" : ""}>Dark Mode</span>
+                          <span className={theme === "dark" ? "font-medium" : ""}>Modo Escuro</span>
                         </div>
                       </button>
                       
@@ -172,12 +175,12 @@ const Settings = () => {
                       >
                         <div className="text-center">
                           <Monitor className="h-8 w-8 mx-auto mb-2 text-gray-500" />
-                          <span className={theme === "system" ? "font-medium" : ""}>System Default</span>
+                          <span className={theme === "system" ? "font-medium" : ""}>Padrão do sistema</span>
                         </div>
                       </button>
                     </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                      Choose how Agilis appears across your entire application.
+                      Escolha como Agilis aparecerá em todo o seu aplicativo.
                     </p>
                   </div>
                   
@@ -186,7 +189,7 @@ const Settings = () => {
                       onClick={handleSaveSettings}
                       className="bg-agilis-accent hover:bg-agilis-accent/90"
                     >
-                      Save Changes
+                      Salvar Alterações
                     </Button>
                   </div>
                 </div>
@@ -195,24 +198,24 @@ const Settings = () => {
           </TabsContent>
           
           <TabsContent value="availability">
-            <Card>
+            <Card className="dark:bg-zinc-950">
               <CardHeader>
-                <CardTitle>Available Days and Times</CardTitle>
+                <CardTitle>Dias e Horas disponíveis</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <Label>Working Days</Label>
+                    <Label>Dias de Trabalho</Label>
                     <div className="flex flex-wrap gap-3">
-                      {daysOfWeek.map((day) => (
+                      {diasDaSemana.map((day) => (
                         <button
                           key={day.id}
                           type="button"
                           onClick={() => handleDayToggle(day.id)}
                           className={`px-4 py-2 rounded-md ${
-                            selectedDays.includes(day.id)
+                            diasSelecionados.includes(day.id)
                               ? 'bg-agilis-accent text-white'
-                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-zinc-900 dark:text-gray-200 dark:hover:bg-gray-600'
                           }`}
                         >
                           {day.label}
@@ -222,15 +225,15 @@ const Settings = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <Label>Working Hours</Label>
-                    <div className="space-y-3">
-                      {timeSlots.map((slot) => (
+                    <Label>Horas de Trabalho</Label>
+                    <div className="space-y-3"> 
+                      {horarios.map((slot) => (
                         <div key={slot.id} className="flex items-center">
                           <input
                             type="checkbox"
                             id={`slot-${slot.id}`}
-                            checked={selectedTimeSlots.includes(slot.id)}
-                            onChange={() => handleTimeSlotToggle(slot.id)}
+                            checked={horariosSelecionados.includes(slot.id)}
+                            onChange={() => handleHorariosToggle(slot.id)}
                             className="mr-3 h-4 w-4 rounded border-gray-300 text-agilis-accent focus:ring-agilis-accent"
                           />
                           <label htmlFor={`slot-${slot.id}`} className="text-gray-700 dark:text-gray-300">
@@ -246,7 +249,7 @@ const Settings = () => {
                       onClick={handleSaveSettings}
                       className="bg-agilis-accent hover:bg-agilis-accent/90"
                     >
-                      Save Changes
+                      Salvar Alterações
                     </Button>
                   </div>
                 </div>
@@ -255,33 +258,37 @@ const Settings = () => {
           </TabsContent>
           
           <TabsContent value="booking">
-            <Card>
+            <Card className="dark:bg-zinc-950">
               <CardHeader>
-                <CardTitle>Your Public Booking Link</CardTitle>
+                <CardTitle>Seu link de agendamento público</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="bookingLink">Your Unique Link</Label>
+                    <Label htmlFor="linkAgendamento">Seu link único</Label>
                     <div className="flex items-center space-x-2">
                       <Input
-                        id="bookingLink"
-                        value={bookingLink}
-                        onChange={(e) => setBookingLink(e.target.value)}
-                        className="flex-1"
+                        id="linkAgendamento"
+                        value={linkAgendamento}
+                        
+                        onChange={(e) => setlinkAgendamento(e.target.value)}
+                        className="flex-1 dark:bg-zinc-900"
                       />
-                      <Button 
+                      <Button  className="dark:bg-zinc-950 dark:hover:bg-gray-900 "
                         variant="outline" 
                         onClick={() => {
-                          navigator.clipboard.writeText(bookingLink);
+
+
+                          
+                          navigator.clipboard.writeText(linkAgendamento);
                           toast.success("Link copied to clipboard!");
                         }}
                       >
-                        Copy
+                        Copiar
                       </Button>
                     </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                      Share this link with your customers so they can book appointments online.
+                      Compartilhe este link com os seus clientes para que eles possam agendar online.
                     </p>
                   </div>
                   
@@ -290,7 +297,7 @@ const Settings = () => {
                       onClick={handleSaveSettings}
                       className="bg-agilis-accent hover:bg-agilis-accent/90"
                     >
-                      Save Changes
+                      Salvar Alterações
                     </Button>
                   </div>
                 </div>

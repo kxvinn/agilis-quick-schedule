@@ -30,7 +30,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="pt-28 pb-16 md:pt-36 md:pb-24 hero-gradient overflow-hidden dark:bg-slate-950">
+    <section className="pt-28 pb-16 md:pt-36 md:pb-24 hero-gradient overflow-hidden dark:bg-zinc-950">
       <div className="container mx-auto px-4">
         <div 
           ref={heroRef} 

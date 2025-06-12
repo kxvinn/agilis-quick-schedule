@@ -22,17 +22,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 py-12 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-md mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <Link to="/" className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-agilis-accent">
+          <Link to="/" className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-agilis-accent ">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to home
           </Link>
           <ThemeToggle />
         </div>
         
-        <Card className="animate-fade-in dark:bg-gray-800 dark:border-gray-700">
+        <Card className="animate-fade-in dark:bg-zinc-900 dark:border-gray-700">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold text-center dark:text-white">
               Welcome back
@@ -52,7 +52,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="dark:bg-zinc-800 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
@@ -69,7 +69,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="dark:bg-zinc-800 dark:border-gray-600 dark:text-white"
                 />
               </div>
               

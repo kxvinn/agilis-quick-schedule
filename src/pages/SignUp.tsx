@@ -8,19 +8,19 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ArrowLeft } from "lucide-react";
 
 const timeSlots = [
-  { id: 1, label: "Morning (8am - 12pm)" },
-  { id: 2, label: "Afternoon (12pm - 5pm)" },
-  { id: 3, label: "Evening (5pm - 9pm)" },
+  { id: 1, label: "Manhã (8:00 - 12:00)" },
+  { id: 2, label: "Tarde (12:00 - 17:00)" },
+  { id: 3, label: "Noite (17:00 - 21:00)" },
 ];
 
 const daysOfWeek = [
-  { id: 'mon', label: "Mon" },
-  { id: 'tue', label: "Tue" },
-  { id: 'wed', label: "Wed" },
-  { id: 'thu', label: "Thu" },
-  { id: 'fri', label: "Fri" },
-  { id: 'sat', label: "Sat" },
-  { id: 'sun', label: "Sun" },
+  { id: 'seg', label: "Seg" },
+  { id: 'ter', label: "Ter" },
+  { id: 'qua', label: "Qua" },
+  { id: 'qui', label: "Qui" },
+  { id: 'sex', label: "Sex" },
+  { id: 'sab', label: "Sab" },
+  { id: 'dom', label: "Dom" },
 ];
 
 const SignUp = () => {
@@ -28,7 +28,7 @@ const SignUp = () => {
   const [whatsapp, setWhatsapp] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [selectedDays, setSelectedDays] = useState<string[]>(['mon', 'tue', 'wed', 'thu', 'fri']);
+  const [selectedDays, setSelectedDays] = useState<string[]>(['seg', 'ter', 'qua', 'qui', 'sex']);
   const [selectedTimeSlots, setSelectedTimeSlots] = useState<number[]>([1, 2]);
 
   const handleDayToggle = (dayId: string) => {
@@ -64,29 +64,30 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 dark:bg-zinc-950">
       <div className="max-w-md mx-auto">
-        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-agilis-accent mb-8">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to home
+        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-agilis-accent mb-8 dark:text-white">
+          <ArrowLeft className="mr-2 h-4 w-4 " />
+          Voltar ao Início
         </Link>
         
-        <Card className="animate-fade-in">
+        <Card className="animate-fade-in dark:bg-zinc-950">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold text-center">
-              Create your Agilis account
+              Crie sua conta no Agilis
             </CardTitle>
             <CardDescription className="text-center">
-              Start simplifying your scheduling process
+              Comece a simplificar o seu processo de agendamento
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="businessName">Business Name</Label>
+                <Label htmlFor="businessName">Nome Empresarial</Label>
                 <Input
                   id="businessName"
-                  placeholder="Your business name"
+                  className="dark:bg-zinc-900"
+                  placeholder="Seu nome empresarial"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
                   required
@@ -94,9 +95,10 @@ const SignUp = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="whatsapp">WhatsApp Number</Label>
+                <Label htmlFor="whatsapp">Número do WhatsApp</Label>
                 <Input
                   id="whatsapp"
+                  className="dark:bg-zinc-900"
                   placeholder="+1 234 567 8900"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
@@ -109,6 +111,7 @@ const SignUp = () => {
                 <Input
                   id="email"
                   type="email"
+                  className="dark:bg-zinc-900"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -117,11 +120,12 @@ const SignUp = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Senha</Label>
                 <Input
                   id="password"
+                  className="dark:bg-zinc-900"
                   type="password"
-                  placeholder="Create a password"
+                  placeholder="Crie uma senha"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -129,14 +133,14 @@ const SignUp = () => {
               </div>
               
               <div className="space-y-2">
-                <Label>Available Days</Label>
+                <Label>Dias disponíveis</Label>
                 <div className="flex flex-wrap gap-2">
                   {daysOfWeek.map(day => (
                     <button
                       key={day.id}
                       type="button"
                       onClick={() => handleDayToggle(day.id)}
-                      className={`px-3 py-1 rounded-md text-sm ${
+                      className={`px-3 py-1 rounded-md dark:text-black font-bold text-sm ${
                         selectedDays.includes(day.id)
                           ? 'bg-agilis-accent text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -149,7 +153,7 @@ const SignUp = () => {
               </div>
               
               <div className="space-y-2">
-                <Label>Available Time Slots</Label>
+                <Label>Disponibilidade de Horário</Label>
                 <div className="space-y-2">
                   {timeSlots.map(slot => (
                     <div key={slot.id} className="flex items-center">
@@ -158,9 +162,9 @@ const SignUp = () => {
                         id={`slot-${slot.id}`}
                         checked={selectedTimeSlots.includes(slot.id)}
                         onChange={() => handleTimeSlotToggle(slot.id)}
-                        className="mr-2 h-4 w-4 rounded border-gray-300 text-agilis-accent focus:ring-agilis-accent"
+                        className="mr-2 h-4 w-4 rounded border-gray-300 text-agilis-accent focus:ring-agilis-accent "
                       />
-                      <label htmlFor={`slot-${slot.id}`} className="text-sm text-gray-700">
+                      <label htmlFor={`slot-${slot.id}`} className="text-sm text-gray-700 dark:text-neutral-400">
                         {slot.label}
                       </label>
                     </div>
@@ -168,16 +172,16 @@ const SignUp = () => {
                 </div>
               </div>
               
-              <Button type="submit" className="w-full bg-agilis-accent hover:bg-agilis-accent/90">
-                Create Account
+              <Button type="submit" className="w-full bg-agilis-accent hover:bg-agilis-accent/90 font-bold">
+                Criar conta
               </Button>
             </form>
           </CardContent>
           <CardFooter>
-            <p className="text-center w-full text-sm text-gray-600">
-              Already have an account?{" "}
-              <Link to="/login" className="text-agilis-accent hover:underline">
-                Log in
+            <p className="text-center w-full text-sm text-gray-600 dark:text-white">
+              Já tem uma conta?{" "}
+              <Link to="/login" className="text-agilis-accent hover:underline font-bold">
+                Entrar
               </Link>
             </p>
           </CardFooter>

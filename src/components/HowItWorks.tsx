@@ -53,7 +53,7 @@ const HowItWorks = () => {
   }, []);
   
   return (
-    <section id="how-it-works" className="section-padding bg-gray-50 dark:bg-slate-950">
+    <section id="how-it-works" className="section-padding bg-gray-50 dark:bg-zinc-950">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-agilis-dark mb-4 dark:text-white">
