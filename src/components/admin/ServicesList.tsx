@@ -71,47 +71,52 @@ const ServicesList = () => {
   return (
     <Card className="animate-fade-in dark:bg-zinc-950">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Services</CardTitle>
+        <CardTitle>Serviços</CardTitle>
         <Button 
           size="sm" 
           onClick={() => setShowAddForm(!showAddForm)}
           className="bg-agilis-accent hover:bg-agilis-accent/90"
         >
           <Plus className="mr-1 h-4 w-4" />
-          Add Service
+          Adicionar Serviço
         </Button>
       </CardHeader>
       <CardContent>
         {showAddForm && (
-          <div className="mb-6 p-4 border border-gray-200 rounded-md bg-gray-50">
+          <div className="mb-6 p-4 border bg-gray-200 dark:bg-zinc-900 border-gray-200 rounded-md bg-gray-50">
             <h3 className="text-sm font-medium mb-4">Add New Service</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <Input
-                placeholder="Service name"
+                placeholder="Nome do serviço"
                 value={newService.nome}
+                className="dark:bg-zinc-950"
                 onChange={(e) => setNewService({...newService, nome: e.target.value})}
               />
               <Input
-                placeholder="duracao (e.g. 30 min)"
+                placeholder="Duração (e.g. 30 min)"
                 value={newService.duracao}
+                className="dark:bg-zinc-950"
+
                 onChange={(e) => setNewService({...newService, duracao: e.target.value})}
               />
               <Input
-                placeholder="preco (e.g. $25)"
+                placeholder="Preço (e.g. $25)"
                 value={newService.preco}
+                className="dark:bg-zinc-950"
+
                 onChange={(e) => setNewService({...newService, preco: e.target.value})}
               />
             </div>
             <div className="flex justify-end space-x-2">
               <Button variant="outline" size="sm" onClick={() => setShowAddForm(false)}>
-                Cancel
+                Cancelar
               </Button>
               <Button 
                 size="sm" 
                 onClick={handleAddService}
                 className="bg-agilis-accent hover:bg-agilis-accent/90"
               >
-                Add Service
+                Adicionar Serviço
               </Button>
             </div>
           </div>
